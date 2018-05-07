@@ -2,11 +2,10 @@ angular.
 module('app').
 component('videoList', {
   templateUrl: 'components/videoList/videoList.template.html',
-  controller: function VideoList(filmiggService){
-    filmiggService.getAll().then(res => {
-      this.items = res.data;
-      console.log(this.items);
+  controller: function VideoList(ytService) {
+    ytService.search('mlp').then(data => {
+      console.info('videos from search by query', data);
+      this.items = data.data.items;
     });
-    this.list = true;
   }
 });

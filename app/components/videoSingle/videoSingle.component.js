@@ -3,7 +3,8 @@ module('app').
 component('videoSingle', {
   bindings: {
     title: '<',
-    author: '<'
+    author: '<',
+    thumb: '<'
   },
   templateUrl: 'components/videoSingle/videoSingle.template.html',
   controller: function VideoSingle(){
