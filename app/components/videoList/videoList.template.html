@@ -9,7 +9,7 @@
   </div>
   <div class="row justify-content-center" ng-repeat="item in $ctrl.items" ng-if="$ctrl.list">
     <div class="col-12 shadow main">
-      <video-single title="item.title" author="item.artist" list="$ctrl.list"></video-single>
+      <video-single title="item.snippet.title" author="item.snippet.channelTitle" thumb="item.snippet.thumbnails.default.url"></video-single>
     </div>
   </div>
   <div class="row justify-content-center" ng-if="!$ctrl.list">
