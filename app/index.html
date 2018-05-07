@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en" ng-app="app">
   <head>
+    <base href="/">
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -13,6 +14,9 @@
 
     <!-- AngularJS -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+    <!-- Routing -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.min.js"></script>
 
     <!-- Youtube Factory-->
     <script src="https://cdn.jsdelivr.net/npm/angular-youtube-api-factory@0.6.2/dist/angular-youtube-api-factory.min.js"></script>
@@ -32,7 +36,7 @@
   </head>
   <body>
     <navbar></navbar>
-    <video-list></video-list>
+    <div ng-view></div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

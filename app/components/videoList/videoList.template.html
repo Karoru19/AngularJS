@@ -10,7 +10,7 @@
   <div class="row justify-content-center" ng-repeat="item in $ctrl.items" ng-if="$ctrl.listMode">
     <div class="col-12 mt-3">
       <div class="shadow main">
-        <a ng-href="https://youtube.com/embed/{{item.id.videoId}}">
+        <a ng-href="/video/{{item.id.videoId}}">
           <video-single title="item.snippet.title" author="item.snippet.channelTitle" thumb="item.snippet.thumbnails.default.url" mode="$ctrl.listMode"></video-single>
         </a>
       </div>
@@ -19,7 +19,7 @@
   <div class="row justify-content-center" ng-if="!$ctrl.listMode">
     <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 mt-4" ng-repeat="item in $ctrl.items">
       <div class="shadow main">
-        <a ng-href="https://youtube.com/embed/{{item.id.videoId}}">
+        <a ng-href="/video/{{item.id.videoId}}">
           <video-single title="item.snippet.title" author="item.snippet.channelTitle" thumb="item.snippet.thumbnails.high.url" mode="$ctrl.listMode"></video-single>
         </a>
       </div>
