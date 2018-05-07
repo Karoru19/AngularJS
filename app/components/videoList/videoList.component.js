@@ -7,7 +7,7 @@ component('videoList', {
       console.info('videos from search by query', data);
       this.items = data.data.items;
     });
-    this.listMode = true;
+    this.listMode = false;
     this.changeMode = function(){
       this.listMode = !this.listMode;
       console.log(this.listMode);

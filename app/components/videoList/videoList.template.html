@@ -8,15 +8,21 @@
     </div>
   </div>
   <div class="row justify-content-center" ng-repeat="item in $ctrl.items" ng-if="$ctrl.listMode">
-    <div class="col-12 shadow main">
-      <a ng-href="https://youtube.com/{{item.id.videoId}}">
-        <video-single title="item.snippet.title" author="item.snippet.channelTitle" thumb="item.snippet.thumbnails.default.url" mode="$ctrl.listMode"></video-single>
-      </a>
+    <div class="col-12 mt-3">
+      <div class="shadow main">
+        <a ng-href="https://youtube.com/embed/{{item.id.videoId}}">
+          <video-single title="item.snippet.title" author="item.snippet.channelTitle" thumb="item.snippet.thumbnails.default.url" mode="$ctrl.listMode"></video-single>
+        </a>
+      </div>
     </div>
   </div>
   <div class="row justify-content-center" ng-if="!$ctrl.listMode">
-    <div class="col-12 col-sm-5 col-md-4 col-lg-3 col-xl-2 shadow main" ng-repeat="item in $ctrl.items">
-      <video-single title="item.snippet.title" author="item.snippet.channelTitle" thumb="item.snippet.thumbnails.high.url" mode="$ctrl.listMode"></video-single>
+    <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 mt-4" ng-repeat="item in $ctrl.items">
+      <div class="shadow main">
+        <a ng-href="https://youtube.com/embed/{{item.id.videoId}}">
+          <video-single title="item.snippet.title" author="item.snippet.channelTitle" thumb="item.snippet.thumbnails.high.url" mode="$ctrl.listMode"></video-single>
+        </a>
+      </div>
     </div>
   </div>
 </div>
