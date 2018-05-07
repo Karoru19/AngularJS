@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-auto ml-auto view">
+      <button type="button" ng-click="$ctrl.list = !$ctrl.list" class="btn btn-light shadow-sm">
+        <img class="img-fluid" height="25px" width="25px" src="../../img/th-large.svg" ng-if="$ctrl.list">
+        <img class="img-fluid" height="25px" width="25px" src="../../img/list.svg" ng-if="!$ctrl.list">
+      </button>
+    </div>
+  </div>
+  <div class="row justify-content-center" ng-repeat="item in $ctrl.items" ng-if="$ctrl.list">
+    <div class="col-12 shadow main">
+<<<<<<< HEAD
+      <video-single title="item.title" author="item.artist" list="$ctrl.list"></video-single>
+    </div>
+  </div>
+  <div class="row justify-content-center" ng-if="!$ctrl.list">
+    <div class="col-12 col-sm-5 col-md-3 col-lg-2 shadow main" ng-repeat="item in $ctrl.items">
+      <video-single title="item.title" author="item.artist"></video-single>
+=======
+      <video-single title="item.snippet.title" author="item.snippet.channelTitle" thumb="item.snippet.thumbnails.default.url"></video-single>
+>>>>>>> cb998c1fee210a6e695a205c96f463ac5a5ae469
+    </div>
+  </div>
+</div>

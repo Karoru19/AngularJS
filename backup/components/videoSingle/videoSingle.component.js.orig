@@ -4,8 +4,11 @@ component('videoSingle', {
   bindings: {
     title: '<',
     author: '<',
-    thumb: '<',
-    mode: '<'
+<<<<<<< HEAD
+    list: '<'
+=======
+    thumb: '<'
+>>>>>>> cb998c1fee210a6e695a205c96f463ac5a5ae469
   },
   templateUrl: 'components/videoSingle/videoSingle.template.html',
   controller: function VideoSingle(){
