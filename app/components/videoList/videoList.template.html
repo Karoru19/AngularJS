@@ -1,12 +1,19 @@
 <div class="container">
   <div class="row justify-content-center">
-    <div class="col"></div>
-    <div class="col-1">
-      <img class="img-fluid view shadow-sm" src="../../img/th-large.svg">
+    <div class="col-auto ml-auto view">
+      <button type="button" ng-click="$ctrl.list = !$ctrl.list" class="btn btn-light shadow-sm">
+        <img class="img-fluid" height="25px" width="25px" src="../../img/th-large.svg" ng-if="$ctrl.list">
+        <img class="img-fluid" height="25px" width="25px" src="../../img/list.svg" ng-if="!$ctrl.list">
+      </button>
     </div>
   </div>
-  <div class="row justify-content-center" ng-repeat="item in $ctrl.items">
+  <div class="row justify-content-center" ng-repeat="item in $ctrl.items" ng-if="$ctrl.list">
     <div class="col-12 shadow main">
+      <video-single title="item.title" author="item.artist" list="$ctrl.list"></video-single>
+    </div>
+  </div>
+  <div class="row justify-content-center" ng-if="!$ctrl.list">
+    <div class="col-12 col-sm-5 col-md-3 col-lg-2 shadow main" ng-repeat="item in $ctrl.items">
       <video-single title="item.title" author="item.artist"></video-single>
     </div>
   </div>

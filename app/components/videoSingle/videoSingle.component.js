@@ -3,10 +3,11 @@ module('app').
 component('videoSingle', {
   bindings: {
     title: '<',
-    author: '<'
+    author: '<',
+    list: '<'
   },
   templateUrl: 'components/videoSingle/videoSingle.template.html',
   controller: function VideoSingle(){
-    this.lol = "dupaxd";
+    console.log("Single");
   }
 });

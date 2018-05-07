@@ -8,5 +8,7 @@ component('videoList', {
       console.log(this.items);
     });
     this.list = true;
+    this.screen = window.screen.width;
+    console.log(this.screen);
   }
 });
