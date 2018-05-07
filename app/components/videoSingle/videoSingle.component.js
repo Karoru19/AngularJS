@@ -2,7 +2,8 @@ angular.
 module('app').
 component('videoSingle', {
   bindings: {
-    text: '<'
+    title: '<',
+    author: '<'
   },
   templateUrl: 'components/videoSingle/videoSingle.template.html',
   controller: function VideoSingle(){
