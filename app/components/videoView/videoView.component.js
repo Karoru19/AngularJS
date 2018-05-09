@@ -18,8 +18,9 @@ angular.module('app').component('videoView', {
                 ytService.tags(data.data.items[0].snippet.tags[0]).then(data => {
                     console.log(data);
                 });
+                historyService.add(this.item);
+                console.log(this.item);
             });
-            historyService.add(this.id);
         };
         this.playlist = [];
         this.suggestions = [];
