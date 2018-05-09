@@ -1,11 +1,11 @@
 angular.
 module('app').
-component('videoList', {
+component('history', {
   bindings: {
     query: '<'
   },
-  templateUrl: 'components/videoList/videoList.template.html',
-  controller: function VideoList(ytService, $location) {
+  templateUrl: 'components/history/history.template.html',
+  controller: function History(ytService, $location) {
     this.listMode = false;
 
     ytService.search($location.search().query).then(data => {

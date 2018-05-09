@@ -7,5 +7,9 @@ component('navbar', {
       $location.path('/search').search({query: this.query});
       this.query = '';
     };
+
+    this.isActive = path => {
+      return $location.path() == path ? true : false;
+    };
   }
 });

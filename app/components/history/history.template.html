@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row justify-content-center">
-    <div class="col-9">
+    <div class="col-12">
       <div class="row">
         <div class="col-auto ml-auto view">
           <button type="button" ng-click="$ctrl.changeMode()" class="btn btn-light shadow-sm">
@@ -10,10 +10,9 @@
         </div>
       </div>
     </div>
-    <div class="col-3"></div>
   </div>
   <div class="row justify-content-center mb-3">
-    <div class="col-9">
+    <div class="col-12">
       <div ng-if="$ctrl.listMode">
         <div class="row" ng-repeat="item in $ctrl.items">
           <div class="col-12 mt-4">
@@ -31,7 +30,7 @@
         </div>
       </div>
       <div class="row justify-content-center" ng-if="!$ctrl.listMode">
-        <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 mt-4" ng-repeat="item in $ctrl.items">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-2 mt-4" ng-repeat="item in $ctrl.items">
           <div class="main">
             <video-single video="item" mode="$ctrl.listMode"></video-single>
           </div>
@@ -42,13 +41,6 @@
           <!-- pager -->
           <paginator>
             </pagination>
-        </div>
-      </div>
-    </div>
-    <div class="col mt-4">
-      <div class="sticky">
-        <div class="karta">
-          Playlist
         </div>
       </div>
     </div>
