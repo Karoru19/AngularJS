@@ -2,9 +2,7 @@ angular.
 module('app').
 component('videoSingle', {
   bindings: {
-    title: '<',
-    author: '<',
-    thumb: '<',
+    video: '<',
     mode: '<'
   },
   templateUrl: 'components/videoSingle/videoSingle.template.html',

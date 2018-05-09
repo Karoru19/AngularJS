@@ -18,66 +18,31 @@
         <div class="row" ng-repeat="item in $ctrl.items">
           <div class="col-12 mt-4">
             <div class="main">
-              <a ng-href="/video/{{item.id.videoId}}">
-                <video-single title="item.snippet.title" author="item.snippet.channelTitle" thumb="item.snippet.thumbnails.default.url" mode="$ctrl.listMode"></video-single>
-              </a>
+              <video-single video="item" mode="$ctrl.listMode"></video-single>
             </div>
           </div>
         </div>
         <!-- pager -->
-        <!-- <ul ng-if="$ctrl.pager.pages.length" class="pagination">
-          <li ng-class="{disabled:$ctrl.pager.currentPage === 1}">
-            <button class="btn btn-light shadow-sm pagination" ng-click="$ctrl.setPage(1)">First</button>
-          </li>
-          <li ng-class="{disabled:$ctrl.pager.currentPage === 1}">
-            <button class="btn btn-light shadow-sm pagination" ng-click="$ctrl.setPage($ctrl.pager.currentPage - 1)">Previous</button>
-          </li>
-          <li ng-repeat="page in $ctrl.pager.pages" ng-class="{active:$ctrl.pager.currentPage === page}">
-            <button class="btn btn-light shadow-sm pagination" ng-click="$ctrl.setPage(page)">{{page}}</button>
-          </li>
-          <li ng-class="{disabled:$ctrl.pager.currentPage === $ctrl.pager.totalPages}">
-            <button class="btn btn-light shadow-sm pagination" ng-click="$ctrl.setPage($ctrl.pager.currentPage + 1)">Next</button>
-          </li>
-          <li ng-class="{disabled:$ctrl.pager.currentPage === $ctrl.pager.totalPages}">
-            <button class="btn btn-light shadow-sm pagination" ng-click="$ctrl.setPage($ctrl.pager.totalPages)">Last</button>
-          </li>
-        </ul> -->
       </div>
       <div class="row justify-content-center" ng-if="!$ctrl.listMode">
         <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 mt-4" ng-repeat="item in $ctrl.items">
           <div class="main">
-            <a ng-href="/video/{{item.id.videoId}}">
-              <video-single title="item.snippet.title" author="item.snippet.channelTitle" thumb="item.snippet.thumbnails.high.url" mode="$ctrl.listMode"></video-single>
-            </a>
+            <video-single video="item" mode="$ctrl.listMode"></video-single>
           </div>
         </div>
         <div class="row justify-content-center">
           <div class="col-12 mt-4">
             <!-- pager -->
-            <!-- <ul ng-if="$ctrl.pager.pages.length" class="pagination">
-              <li ng-class="{disabled:$ctrl.pager.currentPage === 1}">
-                <button class="btn btn-light shadow-sm pagination" ng-click="$ctrl.setPage(1)">First</button>
-              </li>
-              <li ng-class="{disabled:$ctrl.pager.currentPage === 1}">
-                <button class="btn btn-light shadow-sm pagination" ng-click="$ctrl.setPage($ctrl.pager.currentPage - 1)">Previous</button>
-              </li>
-              <li ng-repeat="page in $ctrl.pager.pages" ng-class="{active:$ctrl.pager.currentPage === page}">
-                <button class="btn btn-light shadow-sm pagination" ng-click="$ctrl.setPage(page)">{{page}}</button>
-              </li>
-              <li ng-class="{disabled:$ctrl.pager.currentPage === $ctrl.pager.totalPages}">
-                <button class="btn btn-light shadow-sm pagination" ng-click="$ctrl.setPage($ctrl.pager.currentPage + 1)">Next</button>
-              </li>
-              <li ng-class="{disabled:$ctrl.pager.currentPage === $ctrl.pager.totalPages}">
-                <button class="btn btn-light shadow-sm pagination" ng-click="$ctrl.setPage($ctrl.pager.totalPages)">Last</button>
-              </li>
-            </ul> -->
+            <pagination current-page="$ctrl.page" video-count="$ctrl.videoCount"></pagination>
           </div>
         </div>
       </div>
     </div>
     <div class="col mt-4">
-      <div class="main">
-        Playlist
+      <div class="sticky">
+        <div class="playlist">
+          Playlist
+        </div>
       </div>
     </div>
   </div>
