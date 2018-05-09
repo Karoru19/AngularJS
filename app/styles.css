@@ -2,24 +2,47 @@ body {
   background-color: #f1f1f1;
 }
 
-.main{
+.main {
   background-color: white;
   padding: 10px;
   border-radius: 6px;
   height: 100%;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2), 6px 6px 20px rgba(0, 0, 0, 0.19);
 }
 
-img{
+.pagination {
+  margin: 4px;
+  padding: 10px;
+  text-align: center;
+}
+
+img {
   border-radius: 4px;
 }
 
-.view{
+.view {
   /* background-color: white; */
   margin-top: 10px;
   padding: 0px;
   /* border-radius: 4px; */
 }
 
+.title {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.channel {
+  font-size: 14px;
+  font-weight: 0;
+  color: gray;
+}
+
 a{
   color: black;
+}
+
+iframe {
+  border: none;
+  border-radius: 4px;
 }

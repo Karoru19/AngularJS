@@ -4,8 +4,16 @@
       <img class="img-fluid" ng-src="{{$ctrl.thumb}}">
     </div>
     <div class="col-10">
-      <h5>{{$ctrl.title}}</h5>
-      {{$ctrl.author}}
+      <div class="row">
+        <div class="col-12 text-truncate">
+          <span class="title">{{$ctrl.title}}</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 text-truncate">
+          <span class="channel">{{$ctrl.author}}</span>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -18,8 +26,16 @@
   </div>
   <div class="row justify-content-center">
     <div class="col">
-      <h5>{{$ctrl.title}}</h5>
-      {{$ctrl.author}}
+      <div class="row">
+        <div class="col-12 text-truncate">
+          <span class="title">{{$ctrl.title}}</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <span class="channel">{{$ctrl.author}}</span>
+        </div>
+      </div>
     </div>
   </div>
 </div>

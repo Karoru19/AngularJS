@@ -1,9 +1,37 @@
 <div class="container mt-3">
-    <div class="row justify-content-center">
-        <div class="col-12 col-md-10">
-            <div class="embed-responsive embed-responsive-16by9">
-                <iframe link="{{ $ctrl.id }}" class="embed-responsive-item" player allowfullscreen></iframe>
-            </div>
-        </div>
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-10">
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe link="{{ $ctrl.id }}" class="embed-responsive-item" player allowfullscreen></iframe>
+      </div>
     </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-10">
+      <div class="row">
+        <div class="col-9">
+          <h5>{{$ctrl.title}}</h5>
+        </div>
+        <div class="col-3">
+          {{$ctrl.views}}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-8">
+          {{$ctrl.channel}}
+        </div>
+        <div class="col-2">
+          {{$ctrl.likes}}
+        </div>
+        <div class="col-2">
+          {{$ctrl.dislikes}}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          {{$ctrl.desc}}
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

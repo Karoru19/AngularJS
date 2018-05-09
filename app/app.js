@@ -8,12 +8,8 @@ module.config(function($routeProvider, $locationProvider){
     .when('/', {
         template: '<video-list></video-list>'
     })
-    .when('/search/:query', {
-        template: '<video-list query="ctrl.query"></video-list>',
-        controller: ['$routeParams', function($routeParams){
-            this.query = $routeParams.query;
-        }],
-        controllerAs: 'ctrl'
+    .when('/search', {
+        template: '<video-list></video-list>',
     })
     .when('/video/:id', {
         template: '<video-view id="ctrl.id"></video-view>',
