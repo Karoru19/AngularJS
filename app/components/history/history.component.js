@@ -21,6 +21,7 @@ component('history', {
     if (this.page == undefined) this.page = 1;
     this.items = historyService.get().slice(12 * (this.page - 1), 12 * this.page);
     this.videoCount = this.items.length;
+    this.historyCount = historyService.get().length;
     console.info("items", this.items);
     
 

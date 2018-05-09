@@ -1,9 +1,15 @@
 angular.module('app').component('paginator', {
+  bindings: {
+    count: '<'
+  },
   templateUrl: 'components/paginator/paginator.template.html',
   controller: function paginator(ytService, $location, $scope) {
     let range = 4;
     ytService.search($location.search().query).then(res => {
-      this.count = Math.ceil(res.data.items.length/12);
+      console.log(this.count);
+      if (this.count < 0){
+        this.count = Math.ceil(res.data.items.length/12);
+      } else this.count = Math.ceil(this.count/12);
       this.page = parseInt($location.search().page || 1);
       let begin = this.page - range;
       let end = this.page + range;
