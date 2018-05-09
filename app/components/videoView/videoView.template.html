@@ -1,37 +1,151 @@
 <div class="container mt-3">
   <div class="row justify-content-center">
-    <div class="col-12 col-md-10">
-      <div class="embed-responsive embed-responsive-16by9">
-        <iframe link="{{ $ctrl.id }}" class="embed-responsive-item" player allowfullscreen></iframe>
-      </div>
-    </div>
-  </div>
-  <div class="row justify-content-center">
-    <div class="col-12 col-md-10">
-      <div class="row">
-        <div class="col-9">
-          <h5>{{$ctrl.title}}</h5>
-        </div>
-        <div class="col-3">
-          {{$ctrl.views}}
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-8">
-          {{$ctrl.channel}}
-        </div>
-        <div class="col-2">
-          {{$ctrl.likes}}
-        </div>
-        <div class="col-2">
-          {{$ctrl.dislikes}}
-        </div>
-      </div>
-      <div class="row">
+    <div class="col-9">
+      <div class="row justify-content-center">
         <div class="col-12">
-          {{$ctrl.desc}}
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe link="{{ $ctrl.id }}" class="embed-responsive-item" player allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center mt-1 mb-4">
+        <div class="col-12">
+          <div class="karta">
+            <div class="row align-items-center">
+              <div class="col-12 text-truncate" data-toggle="tooltip" data-placement="bottom" title="{{$ctrl.title}}">
+                <span class="title-lg">{{$ctrl.title}}</span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                <span class="views-count">{{$ctrl.views}}</span>
+              </div>
+              <div class="col-3">
+                <img class="img-fluid like-img" height="25px" width="25px" src="../../img/like.svg"> {{$ctrl.likes}}
+              </div>
+              <div class="col-3">
+                <img class="img-fluid" height="25px" width="25px" src="../../img/dislike.svg"> {{$ctrl.dislikes}}
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <span class="channel-lg">{{$ctrl.channel}}</span>
+              </div>
+              <div class="col-2 ml-auto">
+                <img class="img-fluid" align="right" height="25px" width="25px" src="../../img/add.svg">
+              </div>
+            </div>
+            <hr />
+            <div class="row">
+              <div class="col-12">
+                <div class="opis">{{$ctrl.desc}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mb-4 justify-content-center" ng-if="$ctrl.playlist.length > 0">
+        <div class="col">
+          <div class="karta text-center">
+            Suggestions
+          </div>
+        </div>
+      </div>
+      <div class="row" ng-if="$ctrl.playlist.length > 0">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-4" ng-repeat="item in $ctrl.suggestions track by $index">
+          <div class="main">
+            <div class="row justify-content-center">
+              <div class="col">
+                <!-- <a ng-href="/video/{{$ctrl.video.id.videoId}}"> -->
+                <div class="row justify-content-center">
+                  <div class="col-12 text-center">
+                    <img class="img-fluid" src="{{item.thumb}}">
+                  </div>
+                </div>
+                <div class="row justify-content-start">
+                  <div class="col-12 text-truncate" data-toggle="tooltip" data-placement="bottom" title="{{item.title}}">
+                    <span class="title">{{item.title}}</span>
+                  </div>
+                </div>
+                <!-- </a> -->
+              </div>
+            </div>
+            <div class="row justify-content-start">
+              <div class="col-12 text-truncate" data-toggle="tooltip" data-placement="bottom" title="{{item.channel}}">
+                <span class="channel">{{item.channel}}</span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-auto ml-auto">
+                <img class="img-fluid" height="25px" width="25px" src="../../img/add.svg">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-3">
+      <div ng-if="$ctrl.playlist.length == 0">
+        <div class="sticky">
+          <div class="karta">
+            Suggestions
+            <div class="row" ng-repeat="item in $ctrl.suggestions track by $index">
+              <div class="col-12">
+                <hr />
+                <div class="row justify-content-center">
+                  <div class="col-4">
+                    <img class="img-fluid" src="{{item.thumb}}">
+                  </div>
+                  <div class="col-8">
+                    <div class="row">
+                      <div class="col-12 text-truncate" data-toggle="tooltip" data-placement="bottom" title="{{item.title}}">
+                        <!-- <a ng-href="/video/{{$ctrl.video.id.videoId}}"> -->
+                        <span class="title">{{item.title}}</span>
+                        <!-- </a> -->
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12 text-truncate" data-toggle="tooltip" data-placement="bottom" title="{{item.channel}}">
+                        <span class="channel">{{item.channel}}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div ng-if="$ctrl.playlist.length > 0">
+        <div class="sticky">
+          <div class="karta">
+            Playlist
+            <div class="row" ng-repeat="item in $ctrl.playlist track by $index">
+              <div class="col-12">
+                <hr />
+                <div class="row justify-content-center">
+                  <div class="col-4">
+                    <img class="img-fluid" src="{{item.thumb}}">
+                  </div>
+                  <div class="col-8">
+                    <div class="row">
+                      <div class="col-12 text-truncate" data-toggle="tooltip" data-placement="bottom" title="{{item.title}}">
+                        <!-- <a ng-href="/video/{{$ctrl.video.id.videoId}}"> -->
+                        <span class="title">{{item.title}}</span>
+                        <!-- </a> -->
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12 text-truncate" data-toggle="tooltip" data-placement="bottom" title="{{item.channel}}">
+                        <span class="channel">{{item.channel}}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>

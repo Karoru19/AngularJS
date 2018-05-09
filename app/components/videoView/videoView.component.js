@@ -17,5 +17,13 @@ angular.module('app').component('videoView', {
                 this.dislikes = this.item.statistics.dislikeCount;
             });
         };
+        this.playlist = [];
+        this.suggestions = [];
+        const song = {title: 'The best princess is Luna', channel: 'Starlight Glimmer', thumb: '../../img/1042.jpg'};
+        this.playlist.push(song);
+        for (var i=0; i<6; i++) {
+            song.id = i;
+            this.suggestions.push(song);
+        }
     }
 });
