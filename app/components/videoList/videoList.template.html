@@ -30,18 +30,20 @@
           </div>
         </div>
       </div>
-      <div class="row justify-content-center" ng-if="!$ctrl.listMode">
-        <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 mt-4" ng-repeat="item in $ctrl.items">
-          <div class="main">
-            <video-single video="item" mode="$ctrl.listMode"></video-single>
+      <div ng-if="!$ctrl.listMode">
+        <div class="row justify-content-center">
+          <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 mt-4" ng-repeat="item in $ctrl.items">
+            <div class="main">
+              <video-single video="item" mode="$ctrl.listMode"></video-single>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="row justify-content-center">
-        <div class="col-12 mt-4">
-          <!-- pager -->
-          <paginator>
-            </pagination>
+        <div class="row justify-content-center">
+          <div class="col-12 mt-4">
+            <!-- pager -->
+            <paginator>
+              </pagination>
+          </div>
         </div>
       </div>
     </div>
