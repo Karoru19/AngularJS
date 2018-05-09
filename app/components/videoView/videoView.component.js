@@ -9,7 +9,6 @@ angular.module('app').component('videoView', {
         this.$onInit = () => {
             ytService.watch(this.id).then(data => {
                 this.item = data.data.items[0];
-                console.log(data.data.items[0]);
                 this.title = this.item.snippet.title;
                 this.channel = this.item.snippet.channelTitle;
                 this.desc = this.item.snippet.description;
