@@ -3,7 +3,7 @@ angular.module('app').component('videoView', {
         id: '<'
     },
     templateUrl: 'components/videoView/videoView.template.html',
-    controller: function videoView($scope, ytService) {
+    controller: function videoView($scope, ytService, historyService) {
         this.link="https://youtube.com/embed/" + this.id;
 
         this.$onInit = () => {
@@ -15,7 +15,11 @@ angular.module('app').component('videoView', {
                 this.views = this.item.statistics.viewCount;
                 this.likes = this.item.statistics.likeCount;
                 this.dislikes = this.item.statistics.dislikeCount;
+                ytService.tags(data.data.items[0].snippet.tags[0]).then(data => {
+                    console.log(data);
+                });
             });
+            historyService.add(this.id);
         };
     }
 });

@@ -18,13 +18,6 @@ module.config(function($routeProvider, $locationProvider){
         }],
         controllerAs: 'ctrl'
     })
-    .when('/channel/:id', {
-        template: '<channel id="ctrl.id"></channel>',
-        controller: ['$routeParams', function($routeParams){
-            this.id = $routeParams.id;
-        }],
-        controllerAs: 'ctrl'
-    })
     .otherwise({
         template: 'This page does not exist'
     });
