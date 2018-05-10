@@ -59,12 +59,12 @@
                 <!-- <a ng-href="/video/{{$ctrl.video.id.videoId}}"> -->
                 <div class="row justify-content-center">
                   <div class="col-12 text-center">
-                    <img class="img-fluid" src="{{item.thumb}}">
+                    <img class="img-fluid" ng-src="{{item.snippet.thumbnails.high.url}}">
                   </div>
                 </div>
                 <div class="row justify-content-start">
                   <div class="col-12 text-truncate" data-toggle="tooltip" data-placement="bottom" title="{{item.title}}">
-                    <span class="title">{{item.title}}</span>
+                    <span class="title">{{item.snippet.title}}</span>
                   </div>
                 </div>
                 <!-- </a> -->
@@ -72,7 +72,7 @@
             </div>
             <div class="row justify-content-start">
               <div class="col-12 text-truncate" data-toggle="tooltip" data-placement="bottom" title="{{item.channel}}">
-                <span class="channel">{{item.channel}}</span>
+                <span class="channel">{{item.snippet.channelTitle}}</span>
               </div>
             </div>
             <div class="row">
@@ -94,19 +94,19 @@
                 <hr />
                 <div class="row justify-content-center">
                   <div class="col-4">
-                    <img class="img-fluid" src="{{item.thumb}}">
+                    <img class="img-fluid" ng-src="{{item.snippet.thumbnails.high.url}}">
                   </div>
                   <div class="col-8">
                     <div class="row">
                       <div class="col-12 text-truncate" data-toggle="tooltip" data-placement="bottom" title="{{item.title}}">
                         <!-- <a ng-href="/video/{{$ctrl.video.id.videoId}}"> -->
-                        <span class="title">{{item.title}}</span>
+                        <span class="title">{{item.snippet.title}}</span>
                         <!-- </a> -->
                       </div>
                     </div>
                     <div class="row">
                       <div class="col-12 text-truncate" data-toggle="tooltip" data-placement="bottom" title="{{item.channel}}">
-                        <span class="channel">{{item.channel}}</span>
+                        <span class="channel">{{item.snippet.channelTitle}}</span>
                       </div>
                     </div>
                   </div>
@@ -125,7 +125,7 @@
                 <hr />
                 <div class="row justify-content-center">
                   <div class="col-4">
-                    <img class="img-fluid" src="{{item.thumb}}">
+                    <!-- <img class="img-fluid" src="{{item.thumb}}"> -->
                   </div>
                   <div class="col-8">
                     <div class="row">
