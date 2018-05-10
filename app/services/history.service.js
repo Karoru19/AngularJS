@@ -8,6 +8,7 @@ angular.module('app').service('historyService', function($http, config){
         this.history = JSON.parse(localStorage.getItem('history'));
     }
 
+    console.log("init history service");
     this.add = item => {
         this.history.push(item);
         console.log(this.history);

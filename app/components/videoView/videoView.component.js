@@ -3,7 +3,7 @@ angular.module('app').component('videoView', {
         id: '<'
     },
     templateUrl: 'components/videoView/videoView.template.html',
-    controller: function videoView($scope, ytService, historyService) {
+    controller: function videoView($scope, ytService, historyService, playlistService) {
         this.link="https://youtube.com/embed/" + this.id;
         this.suggestions = [];
 
@@ -24,6 +24,8 @@ angular.module('app').component('videoView', {
             });
         };
         this.playlist = [];
+        if(playlistService.get() != null) this.playlist = playlistService.get();
+        console.log(this.playlist);
         // const song = {title: 'The best princess is Luna', channel: 'Starlight Glimmer', thumb: '../../img/1042.jpg'};
         // this.playlist.push(song);
         // for (var i=0; i<6; i++) {

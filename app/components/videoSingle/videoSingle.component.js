@@ -6,7 +6,10 @@ component('videoSingle', {
     mode: '<'
   },
   templateUrl: 'components/videoSingle/videoSingle.template.html',
-  controller: function VideoSingle(){
+  controller: function VideoSingle(playlistService){
     console.log("Single");
+    this.addToPlaylist = function(){
+      playlistService.add(this.video);
+    };
   }
 });
