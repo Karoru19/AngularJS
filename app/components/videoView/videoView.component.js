@@ -23,7 +23,7 @@ angular.module('app').component('videoView', {
                 historyService.add(this.item);
             });
         };
-        // this.playlist = [];
+        this.playlist = [];
         // const song = {title: 'The best princess is Luna', channel: 'Starlight Glimmer', thumb: '../../img/1042.jpg'};
         // this.playlist.push(song);
         // for (var i=0; i<6; i++) {

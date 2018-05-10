@@ -56,23 +56,23 @@
           <div class="main">
             <div class="row justify-content-center">
               <div class="col">
-                <!-- <a ng-href="/video/{{$ctrl.video.id.videoId}}"> -->
-                <div class="row justify-content-center">
-                  <div class="col-12 text-center">
-                    <img class="img-fluid" ng-src="{{item.snippet.thumbnails.high.url}}">
+                <a ng-href="/video/{{item.id.videoId}}">
+                  <div class="row justify-content-center">
+                    <div class="col-12 text-center">
+                      <img class="img-fluid" ng-src="{{item.snippet.thumbnails.high.url}}">
+                    </div>
                   </div>
-                </div>
-                <div class="row justify-content-start">
-                  <div class="col-12 text-truncate" data-toggle="tooltip" data-placement="bottom" title="{{item.title}}">
-                    <span class="title">{{item.snippet.title}}</span>
+                  <div class="row justify-content-start">
+                    <div class="col-12 text-truncate" data-toggle="tooltip" data-placement="bottom" title="{{item.snippet.title}}">
+                      <div class="title">{{item.snippet.title}}</div>
+                    </div>
                   </div>
-                </div>
-                <!-- </a> -->
+                </a>
               </div>
             </div>
             <div class="row justify-content-start">
-              <div class="col-12 text-truncate" data-toggle="tooltip" data-placement="bottom" title="{{item.channel}}">
-                <span class="channel">{{item.snippet.channelTitle}}</span>
+              <div class="col-12 text-truncate" data-toggle="tooltip" data-placement="bottom" title="{{item.snippet.channelTitle}}">
+                <div class="channel">{{item.snippet.channelTitle}}</div>
               </div>
             </div>
             <div class="row">
@@ -92,25 +92,25 @@
             <div class="row" ng-repeat="item in $ctrl.suggestions track by $index">
               <div class="col-12">
                 <hr />
-                <div class="row justify-content-center">
-                  <div class="col-4">
-                    <img class="img-fluid" ng-src="{{item.snippet.thumbnails.high.url}}">
-                  </div>
-                  <div class="col-8">
-                    <div class="row">
-                      <div class="col-12 text-truncate" data-toggle="tooltip" data-placement="bottom" title="{{item.title}}">
-                        <!-- <a ng-href="/video/{{$ctrl.video.id.videoId}}"> -->
-                        <span class="title">{{item.snippet.title}}</span>
-                        <!-- </a> -->
+                <a ng-href="/video/{{item.id.videoId}}">
+                  <div class="row justify-content-center">
+                    <div class="col-4 mt-auto mb-auto">
+                      <img class="img-fluid" ng-src="{{item.snippet.thumbnails.high.url}}">
+                    </div>
+                    <div class="col-8">
+                      <div class="row">
+                        <div class="col-12 text-truncate" data-toggle="tooltip" data-placement="bottom" title="{{item.snippet.title}}">
+                          <div class="title">{{item.snippet.title}}</div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12 text-truncate" data-toggle="tooltip" data-placement="bottom" title="{{item.snippet.channelTitle}}">
+                          <div class="channel">{{item.snippet.channelTitle}}</div>
+                        </div>
                       </div>
                     </div>
-                    <div class="row">
-                      <div class="col-12 text-truncate" data-toggle="tooltip" data-placement="bottom" title="{{item.channel}}">
-                        <span class="channel">{{item.snippet.channelTitle}}</span>
-                      </div>
-                    </div>
                   </div>
-                </div>
+                </a>
               </div>
             </div>
           </div>
