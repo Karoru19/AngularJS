@@ -22,5 +22,10 @@ component('videoList', {
     });
 
     this.playlist = playlistService.get();
+
+    this.goTo = function (index) {
+      playlistService.setIndex(index);
+      this.index = index;
+  };
   }
 });

@@ -123,7 +123,8 @@
             <div class="row" ng-repeat="item in $ctrl.playlist track by $index">
               <div class="col-12">
                 <hr />
-                <a ng-href="/video/{{item.id}}">
+                <div ng-class="{current: $index === $ctrl.index}">
+                <a ng-click="$ctrl.goTo($index)" ng-href="/video/{{item.id.videoId}}">
                   <div class="row justify-content-center">
                     <div class="col-4">
                       <img class="img-fluid" ng-src="{{item.snippet.thumbnails.high.url}}">
@@ -142,6 +143,7 @@
                     </div>
                   </div>
                 </a>
+              </div>
               </div>
             </div>
           </div>

@@ -6,6 +6,7 @@ angular.module('app').component('videoView', {
   controller: function videoView($scope, ytService, historyService, playlistService) {
     this.link = "https://youtube.com/embed/" + this.id;
     this.suggestions = [];
+    this.index = 0;
 
     this.$onInit = () => {
       ytService.watch(this.id).then(data => {
@@ -21,6 +22,7 @@ angular.module('app').component('videoView', {
           console.log(this.suggestions);
         });
         historyService.add(this.item);
+        this.index = playlistService.getIndex();
       });
     };
     this.playlist = [];
@@ -30,6 +32,11 @@ angular.module('app').component('videoView', {
     this.addToPlaylist = function (item) {
       playlistService.add(item);
       this.playlist = playlistService.get();
+    };
+
+    this.goTo = function (index) {
+        playlistService.setIndex(index);
+        this.index = index;
     };
     // const song = {title: 'The best princess is Luna', channel: 'Starlight Glimmer', thumb: '../../img/1042.jpg'};
     // this.playlist.push(song);
