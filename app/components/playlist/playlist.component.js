@@ -15,10 +15,15 @@ component('playlist', {
     this.playlistCount = playlistService.get().length;
     console.info("items", this.items);
 
-    this.removeEl = function(index){
-      // console.log("Remove Element" + index);
-      playlistService.remove(index);
-      this.items = playlistService.get().slice(12 * (this.page - 1), 12 * this.page);
+    this.removeEl = function (index) {
+      console.log("Remove Element " + (12 * (this.page - 1) + index) + " page: " + this.page);
+      playlistService.remove((12 * (this.page - 1) + index));
+      if (playlistService.get().slice(12 * (this.page - 1), 12 * this.page).length == 0) {
+        $location.search('page', this.page - 1);
+        this.items = playlistService.get().slice(12 * (this.page - 2), 12 * (this.page-1));
+      } else {
+        this.items = playlistService.get().slice(12 * (this.page - 1), 12 * this.page);
+      }
     };
   }
 });

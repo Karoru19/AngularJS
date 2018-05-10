@@ -4,7 +4,6 @@ component('playlistSingle', {
   bindings: {
     video: '<',
     mode: '<',
-    index: '<',
     remove: '&'
   },
   templateUrl: 'components/playlistSingle/playlistSingle.template.html',
