@@ -21,6 +21,9 @@ module.config(function($routeProvider, $locationProvider){
     .when('/history', {
         template: '<history></history>',
     })
+    .when('/playlist', {
+        template: '<playlist></playlist>',
+    })
     .otherwise({
         template: 'This page does not exist'
     });
