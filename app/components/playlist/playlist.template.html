@@ -1,21 +1,26 @@
 <div class="container">
-    <div class="row justify-content-center mb-3">
-      <div class="col-12">
-        <div ng-if="$ctrl.listMode">
-          <div class="row" ng-repeat="item in $ctrl.items track by $index">
-            <div class="col-12 mt-4">
-              <div class="main">
-                <history-single video="item" mode="$ctrl.listMode"></history-single>
-              </div>
-            </div>
+  <div class="row justify-content-center mb-3" ng-if="$ctrl.items.length == 0">
+    <div class="col-12 mt-4">
+      <div class="karta text-center">
+        Playlist is empty
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-center mb-3" ng-if="$ctrl.items.length > 0">
+    <div class="col-12">
+      <div class="row" ng-repeat="item in $ctrl.items track by $index">
+        <div class="col-12 mt-4">
+          <div class="main">
+            <playlist-single video="item" mode="true" index="$index" remove="$ctrl.removeEl($index)"></playlist-single>
           </div>
-          <div class="row justify-content-center">
-            <div class="col-12 mt-4">
-              <!-- pager -->
-              <paginator count="$ctrl.historyCount"></pagination>
-            </div>
-          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-12 mt-4">
+          <!-- pager -->
+          <paginator count="$ctrl.playlistCount"></pagination>
         </div>
       </div>
     </div>
   </div>
+</div>

@@ -6,7 +6,12 @@ component('history', {
   },
   templateUrl: 'components/history/history.template.html',
   controller: function History(historyService, $location) {
-    this.listMode = false;
+    if ($location.search().view == 'list') {
+      this.listMode = true;
+    } else {
+      this.listMode = false;
+    }
+    console.log(this.listMode);
 
     // ytService.search($location.search().query).then(data => {
     //   console.info('videos from search by query', data);
@@ -24,10 +29,5 @@ component('history', {
     this.historyCount = historyService.get().length;
     console.info("items", this.items);
     
-
-    this.changeMode = function () {
-      this.listMode = !this.listMode;
-      console.log(this.listMode);
-    };
   }
 });

@@ -1,17 +1,12 @@
 <div class="container">
-  <div class="row justify-content-center">
-    <div class="col-12">
-      <div class="row">
-        <div class="col-auto ml-auto view">
-          <button type="button" ng-click="$ctrl.changeMode()" class="btn btn-light shadow-sm">
-            <img class="img-fluid" height="25px" width="25px" src="../../img/th-large.svg" ng-if="$ctrl.listMode">
-            <img class="img-fluid" height="25px" width="25px" src="../../img/list.svg" ng-if="!$ctrl.listMode">
-          </button>
-        </div>
+  <div class="row justify-content-center mb-3" ng-if="$ctrl.items.length == 0">
+    <div class="col-12 mt-4">
+      <div class="karta text-center">
+        History is empty
       </div>
     </div>
   </div>
-  <div class="row justify-content-center mb-3">
+  <div class="row justify-content-center mb-3" ng-if="$ctrl.items.length > 0">
     <div class="col-12">
       <div ng-if="$ctrl.listMode">
         <div class="row" ng-repeat="item in $ctrl.items track by $index">
@@ -24,21 +19,25 @@
         <div class="row justify-content-center">
           <div class="col-12 mt-4">
             <!-- pager -->
-            <paginator count="$ctrl.historyCount"></pagination>
+            <paginator count="$ctrl.historyCount">
+              </pagination>
           </div>
         </div>
       </div>
-      <div class="row justify-content-center" ng-if="!$ctrl.listMode">
-        <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-2 mt-4" ng-repeat="item in $ctrl.items track by $index">
-          <div class="main">
-            <history-single video="item" mode="$ctrl.listMode"></history-single>
+      <div ng-if="!$ctrl.listMode">
+        <div class="row justify-content-center">
+          <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-2 mt-4" ng-repeat="item in $ctrl.items track by $index">
+            <div class="main">
+              <history-single video="item" mode="$ctrl.listMode"></history-single>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="row justify-content-center">
-        <div class="col-12 mt-4">
-          <!-- pager -->
-          <paginator count="$ctrl.historyCount"></pagination>
+        <div class="row justify-content-center">
+          <div class="col-12 mt-4">
+            <!-- pager -->
+            <paginator count="$ctrl.historyCount">
+              </pagination>
+          </div>
         </div>
       </div>
     </div>

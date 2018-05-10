@@ -1,0 +1,33 @@
+<div ng-if="$ctrl.mode">
+  <div class="row justify-content-center">
+    <div class="col-11">
+      <a ng-href="/video/{{$ctrl.video.id.videoId}}">
+        <div class="row">
+          <div class="col-2">
+            <img class="img-fluid" ng-src="{{$ctrl.video.snippet.thumbnails.high.url}}">
+          </div>
+          <div class="col-9">
+            <div class="row">
+              <div class="col-12 text-truncate">
+                <div class="title">{{$ctrl.video.snippet.title}}</div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 text-truncate">
+                <div class="channel">{{$ctrl.video.snippet.channelTitle}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-1">
+      <div class="row mt-4 ml-auto">
+        <div class="col-12">
+          <img class="img-fluid" src="../../img/delete.svg" ng-click="$ctrl.remove()">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

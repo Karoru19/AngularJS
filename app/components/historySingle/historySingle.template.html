@@ -1,50 +1,55 @@
 <div ng-if="$ctrl.mode">
-    <div class="row justify-content-center">
-      <div class="col-2">
-        <img class="img-fluid" ng-src="{{$ctrl.video.snippet.thumbnails.high.url}}">
-      </div>
-      <div class="col-10">
+  <div class="row justify-content-center">
+
+    <div class="col-12">
+      <a ng-href="/video/{{$ctrl.video.id}}">
         <div class="row">
-          <div class="col-12 text-truncate">
-            <a ng-href="/video/{{$ctrl.video.id}}">
-              <span class="title">{{$ctrl.video.snippet.title}}</span>
-            </a>
+          <div class="col-2">
+            <img class="img-fluid" ng-src="{{$ctrl.video.snippet.thumbnails.high.url}}">
           </div>
-        </div>
-        <div class="row">
-          <div class="col-12 text-truncate">
-            <span class="channel">{{$ctrl.video.snippet.channelTitle}}</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <div ng-if="!$ctrl.mode">
-    <div class="row justify-content-center">
-      <div class="col">
-        <a ng-href="/video/{{$ctrl.video.id}}">
-          <div class="row justify-content-center">
-            <div class="col-12 text-center">
-              <img class="img-fluid" ng-src="{{$ctrl.video.snippet.thumbnails.high.url}}">
+          <div class="col-10">
+            <div class="row">
+              <div class="col-12 text-truncate">
+                <div class="title">{{$ctrl.video.snippet.title}}</div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 text-truncate">
+                <div class="channel">{{$ctrl.video.snippet.channelTitle}}</div>
+              </div>
             </div>
           </div>
-          <div class="row justify-content-start">
-            <div class="col-12 text-truncate">
-              <span class="title">{{$ctrl.video.snippet.title}}</span>
-            </div>
-          </div>
-        </a>
-      </div>
-    </div>
-    <div class="row justify-content-start">
-      <div class="col-12">
-        <span class="channel">{{$ctrl.video.snippet.channelTitle}}</span>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-auto ml-auto">
-        <img class="img-fluid" height="25px" width="25px" src="../../img/add.svg">
-      </div>
+        </div>
+      </a>
     </div>
   </div>
+</div>
+
+<div ng-if="!$ctrl.mode">
+  <div class="row justify-content-center">
+    <div class="col">
+      <a ng-href="/video/{{$ctrl.video.id}}">
+        <div class="row justify-content-center">
+          <div class="col-12 text-center">
+            <img class="img-fluid" ng-src="{{$ctrl.video.snippet.thumbnails.high.url}}">
+          </div>
+        </div>
+        <div class="row justify-content-start">
+          <div class="col-12 text-truncate">
+            <span class="title">{{$ctrl.video.snippet.title}}</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="row justify-content-start">
+    <div class="col-12">
+      <span class="channel">{{$ctrl.video.snippet.channelTitle}}</span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-auto ml-auto">
+      <img class="img-fluid" height="25px" width="25px" src="../../img/add.svg" ng-click="$ctrl.addToPlaylist()">
+    </div>
+  </div>
+</div>

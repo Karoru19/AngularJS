@@ -19,7 +19,16 @@
         <a class="nav-link" href="/playlist">Playlist</a>
       </li>
     </ul>
-    <form class="form-inline ml-auto">
+    <div class="btn-group" role="group" aria-label="Basic example">
+      <button type="button ml-auto" ng-click="$ctrl.removeHistory()" class="btn btn-light shadow-sm" ng-if="$ctrl.isActive('/history')">
+        <img class="img-fluid" height="25px" width="25px" src="../../img/delete.svg">
+      </button>
+      <button type="button ml-auto" ng-click="$ctrl.changeMode()" class="btn btn-light shadow-sm" ng-if="!$ctrl.isActive('/playlist')">
+        <img class="img-fluid" height="25px" width="25px" src="../../img/th-large.svg" ng-if="$ctrl.listMode">
+        <img class="img-fluid" height="25px" width="25px" src="../../img/list.svg" ng-if="!$ctrl.listMode">
+      </button>
+    </div>
+    <form class="form-inline ml-2">
       <input class="form-control mr-sm-2" type="search" ng-model="$ctrl.query" placeholder="Search" aria-label="Search">
       <button class="btn btn-warning my-2 my-sm-0" ng-click="$ctrl.search()" type="submit">Search</button>
     </form>

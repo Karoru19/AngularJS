@@ -1,31 +1,19 @@
 <div class="container">
-  <div class="row justify-content-center">
-    <div class="col-9">
-      <div class="row">
-        <div class="col-auto ml-auto view">
-          <button type="button" ng-click="$ctrl.changeMode()" class="btn btn-light shadow-sm">
-            <img class="img-fluid" height="25px" width="25px" src="../../img/th-large.svg" ng-if="$ctrl.listMode">
-            <img class="img-fluid" height="25px" width="25px" src="../../img/list.svg" ng-if="!$ctrl.listMode">
-          </button>
-        </div>
-      </div>
-    </div>
-    <div class="col-3"></div>
-  </div>
   <div class="row justify-content-center mb-3">
     <div class="col-9">
       <div ng-if="$ctrl.listMode">
         <div class="row" ng-repeat="item in $ctrl.items">
           <div class="col-12 mt-4">
             <div class="main">
-              <video-single video="item" mode="$ctrl.listMode"></video-single>
+              <video-single video="item" mode="$ctrl.listMode" playlist="$ctrl.playlist"></video-single>
             </div>
           </div>
         </div>
         <div class="row justify-content-center">
           <div class="col-12 mt-4">
             <!-- pager -->
-            <paginator count="-1"></pagination>
+            <paginator count="-1">
+              </pagination>
           </div>
         </div>
       </div>
@@ -33,22 +21,51 @@
         <div class="row justify-content-center">
           <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 mt-4" ng-repeat="item in $ctrl.items">
             <div class="main">
-              <video-single video="item" mode="$ctrl.listMode"></video-single>
+              <video-single video="item" mode="$ctrl.listMode" playlist="$ctrl.playlist"></video-single>
             </div>
           </div>
         </div>
         <div class="row justify-content-center">
           <div class="col-12 mt-4">
             <!-- pager -->
-            <paginator count="-1"></pagination>
+            <paginator count="-1">
+              </pagination>
           </div>
         </div>
       </div>
     </div>
-    <div class="col mt-4">
+    <div class="col-3 mt-4">
       <div class="sticky">
         <div class="karta">
-          Playlist
+          <div class="row">
+            <div class="col">
+              Playlist
+            </div>
+          </div>
+          <div class="row" ng-repeat="item in $ctrl.playlist track by $index">
+            <div class="col-12">
+              <hr />
+              <a ng-href="/video/{{item.id}}">
+              <div class="row justify-content-center">
+                <div class="col-4">
+                  <img class="img-fluid" ng-src="{{item.snippet.thumbnails.high.url}}">
+                </div>
+                <div class="col-8">
+                  <div class="row">
+                    <div class="col-12 text-truncate" data-toggle="tooltip" data-placement="bottom" title="{{item.title}}">
+                      <span class="title">{{item.snippet.title}}</span>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12 text-truncate" data-toggle="tooltip" data-placement="bottom" title="{{item.channel}}">
+                      <span class="channel">{{item.snippet.channelTitle}}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
